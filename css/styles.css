@@ -1,0 +1,197 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo {
+    max-width: 100px;
+}
+.img_logo {
+    width: 50px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav {
+    position: fixed;
+    color: white;
+    background: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_link {
+    color: inherit;
+    font-weight: bold;
+    font-size: 23px;
+    text-decoration: none;
+
+}
+
+.nav_link:hover {
+    color: blue;
+}
+.nav-toggle {
+    padding: 1em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav{
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: grey;
+    width: 2em;
+    height: 2px;
+    border-radius: 2em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::after,
+.hamburger::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before {
+    top: 6px;
+}
+.hamburger::after {
+    bottom: 6px;
+}
+
+
+
+html {
+    background: black;    
+}
+
+.game_img {
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    padding-top: 10px;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+
+    grid-template-areas: 
+    "nav    nav     nav     nav"
+    "sidebar    main    main    main"
+    "sidebar    content1    content2    content3"
+    "sidebar    content1  content2  content3";
+
+    text-align: center;
+}
+
+nav {
+    background: black;
+    grid-area: nav;
+    grid-gap: 0;
+}
+
+main {
+    background: darkgrey;
+    grid-area: main;
+}
+
+#sidebar {
+    background: grey;
+    grid-area: sidebar;
+}
+.sidebar_img {
+    width: 400px;
+    height: 100%;
+}
+
+#content1 {
+    background: grey;
+    grid-area: content1;
+}
+
+#content2 {
+    background: grey;
+    grid-area: content2;
+}
+
+#content3 {
+    background: grey;
+    grid-area: content3;
+}
+
+@media only screen and (max-width: 550px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+}
+
+.description {
+    margin-bottom: 20px;
+}

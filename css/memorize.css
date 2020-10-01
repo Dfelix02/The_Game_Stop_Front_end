@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    background: darkgrey;
-}
-
 .memory-game {
     width: 640px;
     height: 640px;
@@ -53,7 +47,17 @@ body {
 .front-face {
     transform: rotateY(180deg);
 }
+section {
+    background: darkkhaki;
+}
 
-.highscore {
-    background: green;
+body {
+    background: darkgray;
+}
+
+.reser-button {
+    transition: .5s ease;
+    left: 20%;
+    background: darkkhaki;
+    padding: 10px;
 }

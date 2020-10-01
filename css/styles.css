@@ -125,6 +125,10 @@ html {
     padding-top: 10px;
 }
 
+.game_description {
+    padding-top: 20px;
+}
+
 .container {
     display: grid;
     height: 100vh;
@@ -134,10 +138,10 @@ html {
     grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
 
     grid-template-areas: 
-    "nav    nav     nav     nav"
-    "sidebar    main    main    main"
-    "sidebar    content1    content2    content3"
-    "sidebar    content1  content2  content3";
+    "sidebar    main1     main2     main3"
+    "sidebar    main1    main2    main3"
+    "sidebar   content1    content2    content3"
+    "bottomleft2    content1  content2  content3";
 
     text-align: center;
 }
@@ -148,19 +152,27 @@ nav {
     grid-gap: 0;
 }
 
-main {
+#main1 {
     background: darkgrey;
-    grid-area: main;
+    grid-area: main1;
+}
+#main2 {
+    background: grey;
+    grid-area: main2;
+}
+#main3 {
+    background: darkgrey;
+    grid-area: main3;
 }
 
 #sidebar {
     background: grey;
     grid-area: sidebar;
 }
-.sidebar_img {
-    width: 400px;
-    height: 100%;
+#sidebar > * {
+    margin: 20px;
 }
+
 
 #content1 {
     background: grey;
@@ -180,18 +192,109 @@ main {
 @media only screen and (max-width: 550px) {
     .container{
         grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 2.2fr 2.2fr 1.2fr 1.2fr 1fr;
         grid-template-areas: 
         "nav"
         "sidebar"
-        "main"
+        "main1"
+        "main2"
+        "main3"
         "content1"
         "content2"
-        "content3"
-        "footer";
+        "content3";
     }
 }
 
 .description {
-    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.user-highscore {
+    padding: 10px;
+}
+.game_name {
+    font-weight: bold;
+}
+
+.game {
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    border: solid 2px;
+}
+
+.bottom-left2 {
+    background: darkgray;
+    grid-area: bottomleft2;
+}
+
+.log-out {
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-user {
+    background: red;
+    padding: 2px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#newUsername {
+    border-radius: 2px;
+    box-shadow: 2px 5px #888888;
+    cursor: pointer;
+}
+.new-username-button {
+    background: lightskyblue;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.login-button {
+    background: lightskyblue;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+#username {
+    border-radius: 2px;
+    box-shadow: 2px 5px #888888;
+    cursor: pointer;
+}
+
+.create-user {
+    background: lightskyblue;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-top: 40px;
+    padding-top: 20px;
+    border: solid 2px;
+    background: lightgrey;
+    letter-spacing: 0.1em;
+}
+
+.new-user-div {
+    margin-top: 30px;
+    padding-top: 20px;
+    border: solid 2px;
+    background: lightgrey;
+}
+
+.new-user-submit-button {
+    margin-top: 40px;
+    background: lightskyblue;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 5px;;
 }

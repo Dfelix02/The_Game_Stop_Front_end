@@ -1,4 +1,4 @@
-# Memorize
+# The Game Stop
 
 This is the front end part of my project.
 
